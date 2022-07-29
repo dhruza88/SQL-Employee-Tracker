@@ -44,7 +44,7 @@ class Employee {
                         if (err) {
                             console.log(err);
                         }
-                        // console.log("--------------------");
+                        console.log("--------------------");
                         console.table(res);
                     } catch (err) {
                     }
