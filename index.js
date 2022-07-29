@@ -248,6 +248,58 @@ function addEmployee(){
     )
 }
 
+function updateEmployeeRole() {
+    let roles = ["No Role"];
+    let employees = [ ];
+    db.query("SELECT * FROM role ",
+    function(err, roleRes) {
+        if (err){
+            console.log(err);
+        }
+        for(let i=0; i < roleRes.length; i++) {
+            if(empRes[i].first_name) {
+                employees.push(empRes[i].first_name + " " + empRes[i].last_name);
+            }
+        }
+
+        let questions = [
+            "Who's role would you like to change",
+            "What is their new role"
+        ];
+        inquirer.prompt([
+            {
+                name: "employee",
+                type: "list",
+                message: questions[0],
+                choices: employeees
+            },
+            {
+                name: "role",
+                type: "list",
+                message: questions[1],
+                choices: roles
+            }
+        ]).then((data) => {
+            let roleId = null;
+            for (let i=0; i < roleRes.length; i++) {
+                if (roleRes[i].title === data.role) {
+                    roleId = roleRes[i].id;
+                    break;
+                }
+            }
+            for (let i= 0; i < empRes.length; i++) {
+                if(empRes[i].first_name + " " + empRes[i].last_name === data.employee) {
+                    employee.setAttributes(empRes[i]);
+                    employee.role_id = roleId;
+                    employee.updateEmployee();
+                    break;
+                }
+            }
+            start();
+        });
+        
+    })
+};
 
 
 start();    
