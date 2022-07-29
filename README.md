@@ -50,3 +50,4 @@ davidhruza@gmail.com
 
 Link to Video Below:
 
+https://github.com/dhruza88/SQL-Employee-Tracker/blob/main/employee.js%20-%20SQL-Employee-Tracker%20-%20Visual%20Studio%20Code%202022-07-28%2019-47-50.zip
