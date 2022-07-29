@@ -211,12 +211,12 @@ function addEmployee() {
                         }
                     }
 
-                    let questions = [
-                        "What is the employee first name?",
-                        "What is the employee last name?",
-                        "What is the employee role?",
-                        "Who is the employee manager?"
-                    ];
+                    // let questions = [
+                    //     "What is the employee first name?",
+                    //     "What is the employee last name?",
+                    //     "What is the employee role?",
+                    //     "Who is the employee manager?"
+                    // ];
                     // let questionsObj = [
                     //     {
                     //         name: 'firstName',
