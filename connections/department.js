@@ -21,7 +21,7 @@ class Department {
 
     }
 
-     addDept(){
+     addDept(departmentName = this.name ){
         this.empDept.query("INSERT INTO department (name) VALUES (?)", [departmentName] ,
             function (err, res) {
                 if (err) {
