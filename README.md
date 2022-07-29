@@ -20,7 +20,9 @@ Allowing a user to keep track of the employee database, have salary information 
 
 ## Installation
 npm i express,
+
 npm i inquirer@8,
+
 npm i mysql2
 
 ## Usage
@@ -45,4 +47,6 @@ run the program, start adding and updating new employees and roles.
 ## Questions
 [https://www.github.com/dhruza88](https://www.github.com/dhruza88) <br />
 davidhruza@gmail.com
+
+Link to Video Below:
 
