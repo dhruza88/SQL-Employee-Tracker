@@ -14,7 +14,7 @@ class Employee {
 
     setAttributes(data) {
         Object.getOwnPropertyNames(this).forEach((attribute) => {
-            if (attribute !== "empRole") {
+            if (attribute !== "emp") {
                 this[attribute] = data[attribute];
             }
         })
@@ -44,7 +44,7 @@ class Employee {
                         if (err) {
                             console.log(err);
                         }
-                        console.log("--------------------");
+                        // console.log("--------------------");
                         console.table(res);
                     } catch (err) {
                     }
@@ -65,32 +65,6 @@ class Employee {
         );
     }
 
-    // updateEmployee(id = this.id, firstName = this.first_name, lastName = this.last_name, roleId = this.role_id, managerId = this.manager_id) {
-
-    //     const empObj = {
-    //         first_name: this.first_name,
-    //         last_name: this.last_name,
-    //         role_id: this.role_id,
-    //         manager_id: this.manager_id
-    //     };
-    //     const idObj = {
-    //         id: id
-    //     };
-    //     console.log(empObj);
-    //     console.log(idObj);
-    //     console.log();
-
-    //     this.emp.query("UPDATE employee SET ? WHERE ?",
-    //     [
-    //         empObj,
-    //         idObj
-    //     ],
-    //         function (err, res) {
-    //             if (err) {
-    //                 throw err;
-    //             }
-    //         });
-    // }
     updateEmployee(id = this.id, firstName = this.first_name, lastName = this.last_name, roleId = this.role_id, managerId = this.manager_id) {
         this.emp.query("UPDATE employee SET ? WHERE ?", [
             {   first_name: firstName,

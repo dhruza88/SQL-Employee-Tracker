@@ -69,7 +69,6 @@ function start() {
                     break;
                 case "Add Employee":
                     addEmployee();
-                    start();
                     break;
                 case "Update Employee Role":
                     updateEmployeeRole();
@@ -244,48 +243,57 @@ function addEmployee() {
 
                     // });
 
-                    inquirer.prompt([
-                        {
-                            name: "firstName",
-                            type: "input",
-                            message: questions[0]
-                        },
-                        {
-                            name: "lastName",
-                            type: "input",
-                            message: questions[1]
-                        },
-                        {
-                            name: "role",
-                            type: "list",
-                            message: questions[2],
-                            choices: roles
-                        },
-                        {
-                            name: "manager",
-                            type: "list",
-                            message: questions[3],
-                            choices: managers
-                        }
-                    ]).then((data) => {
-                        let roleId = null;
-                        for (let i = 0; i < roleRes.length; i++) {
-                            if (roleRes[i].title === data.role) {
-                                roleId = roleRes[i].id;
-                                break;
-                            }
-                        }
+                    console.log(roles);
+                    console.log(managers);
+                    console.log(roleRes);
+                    console.log();
 
-                        let managerId = null;
-                        for (let i = 0; i < empRes.length; i++) {
-                            if (empRes[i].first_name + " " + empRes[i].last_name === data.manager) {
-                                managerId = empRes[i].id;
-                                break;
+                    try {
+                        inquirer.prompt([
+                            {
+                                name: "firstName",
+                                type: "input",
+                                message: "What is the employee first name?"
+                            },
+                            {
+                                name: "lastName",
+                                type: "input",
+                                message: "What is the employee last name?"
+                            },
+                            {
+                                name: "eRole",
+                                type: "list",
+                                message: "What is the employee role?",
+                                choices: roles
+                            },
+                            {
+                                name: "eManager",
+                                type: "list",
+                                message: "Who is the employee manager?",
+                                choices: managers
                             }
-                        }
-                        employee.addEmployee(data.firstName, data.lastName, roleId, managerId);
-                        start();
-                    });
+                        ]).then((data) => {
+                            let roleId = null;
+                            for (let i = 0; i < roleRes.length; i++) {
+                                if (roleRes[i].title === data.eRole) {
+                                    roleId = roleRes[i].id;
+                                    break;
+                                }
+                            }
+    
+                            let managerId = null;
+                            for (let i = 0; i < empRes.length; i++) {
+                                if (empRes[i].first_name + " " + empRes[i].last_name === data.eManager) {
+                                    managerId = empRes[i].id;
+                                    break;
+                                }
+                            }
+                            employee.addEmployee(data.firstName, data.lastName, roleId, managerId);
+                            start();
+                        });
+                    } catch(err) {
+                        console.log(err);
+                    }
                 })
 
 
