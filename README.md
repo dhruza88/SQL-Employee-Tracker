@@ -4,7 +4,7 @@
 ## Description
 Allowing a user to keep track of the employee database, have salary information for their respective employees, be able to know what role they have, the manager they have, if there is one. Also to know which department each employee falls under.
 
-
+*KEYNOTE Since taking the video i have updated to add a dashed line to make the employee table outlook look much better than before when the top of the table was trying to print off to the right in previous versions*
 
 ## Table of Contents
 
