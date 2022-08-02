@@ -26,7 +26,7 @@ npm i inquirer@8,
 npm i mysql2
 
 ## Usage
-As a user you must run npm install to install all the relevants packages. First run the schema and seeds to populate the data into the server. Then switching over to node after you have ran the install of the packages you are able to run node index.js. This brings you into the application and allows you to start selecting your options.
+As a user you must run npm install to install all the relevants packages. First run the schema and seeds to populate the data into the server. Then switching over to node after you have ran the install of the packages you are able to run node server.js. This brings you into the application and allows you to start selecting your options.
 
 ## Credits
 stackoverflow.com,node.js,google,inquirer
